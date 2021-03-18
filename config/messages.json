@@ -1,0 +1,1753 @@
+{
+	"OK": {
+		"error": false,
+		"code": "A00",
+		"name": "OK",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Ok.",
+		"data": {}
+	},
+	"NOT_FOUND": {
+		"error": false,
+		"code": "A00",
+		"name": "NOT_FOUND",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Not found.",
+		"data": {}
+	},
+	"FOUND": {
+		"error": false,
+		"code": "A00",
+		"name": "FOUND",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Found.",
+		"data": {}
+	},
+	"ERR_DUPLICATE": {
+		"error": true,
+		"code": "A01",
+		"name": "ERR_DUPLICATE",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Duplicates!",
+		"data": {}
+	},
+	"GENERAL_ERR": {
+		"error": true,
+		"code": "A02",
+		"name": "GENERAL_ERR",
+		"status": 200,"status-old": 500,
+		"from": "",
+		"info": {},
+		"message": "Something went wrong!",
+		"data": {}
+	},	
+	"SERVICE_NOT_FOUND": {
+		"error": true,
+		"code": "A03",
+		"status": 200,"status-old": 404,
+		"from": "",
+		"info": {},
+		"message": "Service not found!",
+		"data": {}
+	},
+
+	"ERR_DATABASE": {
+		"error": true,
+		"code": "A04",
+		"status": 200,"status-old": 500,
+		"from": "",
+		"info": {},
+		"message": "Database problems!",
+		"data": {}
+	},
+	"INVALID_REQUEST": {
+		"error": true,
+		"code": "A05",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Invalid request!",
+		"data": {}
+	},
+	"MISSING_KEY": {
+		"error": true,
+		"code": "A06",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Missing key!",
+		"data": {}
+	},
+	"NOT_VALID_KEY": {
+		"error": true,
+		"code": "A07",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "not valid key!",
+		"data": {}
+	},
+
+	"ERR_LOGIN": {
+		"error": true,
+		"code": "A08",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Failed login, try again.",
+		"data": {}
+	},
+	"ERR_LOGIN_WRONG": {
+		"error": true,
+		"code": "A09",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Wrong username or password!",
+		"data": {}
+	},
+	"ERR_LOGIN_PERMISSION": {
+		"error": true,
+		"code": "A10",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Error account permission",
+		"data": {}
+	},
+	"LOGIN_SUCCESS": {
+		"error": false,
+		"code": "00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "login successfully.",
+		"data": {}
+	},
+	"OTP_GENERATED_SUCCESS": {
+		"error": true,
+		"code": "00",
+		"status": 200,"status-old": 404,
+		"from": "",
+		"info": {},
+		"message": "Generated OTP Success!",
+		"data": {}
+	},
+	"ERR_OTP_INVALID": {
+		"error": true,
+		"code": "A11",
+		"status": 200,"status-old": 404,
+		"from": "",
+		"info": {},
+		"message": "Error OTP Invalid",
+		"data": {}
+	},
+	"OTP_VALID": {
+		"error": false,
+		"code": "00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "OTP valid.",
+		"data": {}
+	},
+	"MAIL_FAILED": {
+		"error": true,
+		"code": "A12",
+		"status": 200,"status-old": 404,
+		"from": "",
+		"info": {},
+		"message": "Error system, try again!",
+		"data": {}
+	},
+	"ERR_PASSWORD_WRONG": {
+		"error": true,
+		"code": "A13",
+		"status": 200,"status-old": 404,
+		"from": "",
+		"info": {},
+		"message": "Wrong Password",
+		"data": {}
+	},
+	"UPLOAD_SUCCESS": {
+		"error": true,
+		"code": "00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Upload Success",
+		"data": {}
+	},
+	"ERR_UPLOAD_FAILED": {
+		"error": true,
+		"code": "A13",
+		"status": 200,"status-old": 404,
+		"from": "",
+		"info": {},
+		"message": "Upload Failed",
+		"data": {}
+	},
+
+
+	"USERS_INSERT_SUCCESS": {
+		"error": false,
+		"code": "B00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "User data added successfully",
+		"data": {}
+	},
+	"USERS_UPDATE_SUCCESS": {
+		"error": false,
+		"code": "B00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "User data updated successfully",
+		"data": {}
+	},
+	"USERS_DELETE_SUCCESS": {
+		"error": false,
+		"code": "B00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "User data deleted successfully",
+		"data": {}
+	},
+	"ERR_USERS_DUPLICATE": {
+		"error": true,
+		"code": "B01",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Duplicates user data",
+		"data": {}
+	},
+	"ERR_USERS_UPDATE_NONE": {
+		"error": true,
+		"code": "B02",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Updated user data not found",
+		"data": {}
+	},
+	"ERR_USERS_DELETE_NONE": {
+		"error": true,
+		"code": "B03",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Deleted user data not found",
+		"data": {}
+	},
+	"ERR_USERS_NOT_FOUND": {
+		"error": true,
+		"code": "B04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "User data not found",
+		"data": {}
+	},
+	"USERS_NOT_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "B00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "User deactivated successfully",
+		"data": {}
+	},
+	"USERS_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "B00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "User activated successfully",
+		"data": {}
+	},
+
+
+	"RUANGAN_INSERT_SUCCESS": {
+		"error": false,
+		"code": "C00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Room data added successfully",
+		"data": {}
+	},
+	"RUANGAN_UPDATE_SUCCESS": {
+		"error": false,
+		"code": "C00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Room data updated successfully",
+		"data": {}
+	},
+	"RUANGAN_DELETE_SUCCESS": {
+		"error": false,
+		"code": "C00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Room data deleted successfully",
+		"data": {}
+	},
+	"ERR_RUANGAN_DUPLICATE": {
+		"error": true,
+		"code": "C01",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Duplicates room data",
+		"data": {}
+	},
+	"ERR_RUANGAN_UPDATE_NONE": {
+		"error": true,
+		"code": "C02",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Updated room data not found",
+		"data": {}
+	},
+	"ERR_RUANGAN_DELETE_NONE": {
+		"error": true,
+		"code": "C03",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Deleted room data not found",
+		"data": {}
+	},
+	"ERR_RUANGAN_NOT_FOUND": {
+		"error": true,
+		"code": "C04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Room data not found",
+		"data": {}
+	},
+	"RUANGAN_NOT_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "C00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Room deactivated successfully",
+		"data": {}
+	},
+	"RUANGAN_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "C00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Room activated successfully",
+		"data": {}
+	},
+
+
+	"DOKTER_INSERT_SUCCESS": {
+		"error": false,
+		"code": "D00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Doctor data added successfully",
+		"data": {}
+	},
+	"DOKTER_UPDATE_SUCCESS": {
+		"error": false,
+		"code": "D00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Doctor data updated successfully",
+		"data": {}
+	},
+	"DOKTER_DELETE_SUCCESS": {
+		"error": false,
+		"code": "D00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Doctor data deleted successfully",
+		"data": {}
+	},
+	"ERR_DOKTER_DUPLICATE": {
+		"error": true,
+		"code": "D01",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Duplicates doctor data",
+		"data": {}
+	},
+	"ERR_DOKTER_UPDATE_NONE": {
+		"error": true,
+		"code": "D02",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Updated doctor data not found",
+		"data": {}
+	},
+	"ERR_DOKTER_DELETE_NONE": {
+		"error": true,
+		"code": "D03",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Deleted doctor data not found",
+		"data": {}
+	},
+	"ERR_DOKTER_NOT_FOUND": {
+		"error": true,
+		"code": "D04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Doctor data not found",
+		"data": {}
+	},
+	"DOKTER_NOT_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "D00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Doctor deactivated successfully",
+		"data": {}
+	},
+	"DOKTER_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "D00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Doctor activated successfully",
+		"data": {}
+	},
+	"ERR_DOKTER_ACTIVATION_INVALID": {
+		"error": true,
+		"code": "D05",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Doctor activation url invalid",
+		"data": {}
+	},
+	"DOKTER_ACTIVATION_VALID":{
+		"error": false,
+		"code": "D00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Doctor activation successfully",
+		"data": {}
+	},
+
+	
+	"PASIEN_INSERT_SUCCESS": {
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Patient data added successfully",
+		"data": {}
+	},
+	"PASIEN_UPDATE_SUCCESS": {
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Patient data updated successfully",
+		"data": {}
+	},
+	"PASIEN_DELETE_SUCCESS": {
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Patient data deleted successfully",
+		"data": {}
+	},
+	"ERR_PASIEN_DUPLICATE": {
+		"error": true,
+		"code": "E01",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Duplicates patient data",
+		"data": {}
+	},
+	"ERR_PASIEN_UPDATE_NONE": {
+		"error": true,
+		"code": "E02",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Updated patient data not found",
+		"data": {}
+	},
+	"ERR_PASIEN_DELETE_NONE": {
+		"error": true,
+		"code": "E03",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Deleted patient data not found",
+		"data": {}
+	},
+	"ERR_PASIEN_NOT_FOUND": {
+		"error": true,
+		"code": "E04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Patient data not found",
+		"data": {}
+	},
+	"ERR_PASIEN_DELETE_FAILED": {
+		"error": true,
+		"code": "E05",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Deleted patient data not found",
+		"data": {}
+	},
+	"PASIEN_NOT_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Patient deactivated successfully",
+		"data": {}
+	},
+	"PASIEN_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Patient activated successfully",
+		"data": {}
+	},
+	"ERR_PASIEN_ACTIVATION_INVALID": {
+		"error": true,
+		"code": "E05",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Patient activation url invalid",
+		"data": {}
+	},
+	"PASIEN_ACTIVATION_VALID":{
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Patient activation successfully",
+		"data": {}
+	},
+
+	"PASIEN_NUMBER_GENERATED_SUCCESS":{
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Medical record ID generated successfully",
+		"data": {}	
+	},
+
+	"REKAM_MEDIK_INSERT_SUCCESS": {
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Medical Record data added successfully",
+		"data": {}
+	},
+	"REKAM_MEDIK_UPDATE_SUCCESS": {
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Medical Record data updated successfully",
+		"data": {}
+	},
+	"REKAM_MEDIK_DELETE_SUCCESS": {
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Medical Record data deleted successfully",
+		"data": {}
+	},
+	"ERR_REKAM_MEDIK_DUPLICATE": {
+		"error": true,
+		"code": "E01",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Duplicates Medical Record data",
+		"data": {}
+	},
+	"ERR_REKAM_MEDIK_UPDATE_NONE": {
+		"error": true,
+		"code": "E02",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Updated Medical Record data not found",
+		"data": {}
+	},
+	"ERR_REKAM_MEDIK_DELETE_NONE": {
+		"error": true,
+		"code": "E03",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Deleted Medical Record data not found",
+		"data": {}
+	},
+	"ERR_REKAM_MEDIK_NOT_FOUND": {
+		"error": true,
+		"code": "E04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Medical Record data not found",
+		"data": {}
+	},
+	"REKAM_MEDIK_NOT_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Medical Record deactivated successfully",
+		"data": {}
+	},
+	"REKAM_MEDIK_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Medical Record activated successfully",
+		"data": {}
+	},
+	"ERR_REKAM_MEDIK_PARAMS_NOT_VALID": {
+		"error": true,
+		"code": "E05",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Parameters Not Valid",
+		"data": {}
+	},
+
+
+	
+	
+
+	"CAR_DRIVER_INSERT_SUCCESS": {
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Car Driver data added successfully",
+		"data": {}
+	},
+	"CAR_DRIVER_UPDATE_SUCCESS": {
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Car Driver data updated successfully",
+		"data": {}
+	},
+	"CAR_DRIVER_DELETE_SUCCESS": {
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Car Driver data deleted successfully",
+		"data": {}
+	},
+	"ERR_CAR_DRIVER_DUPLICATE": {
+		"error": true,
+		"code": "E01",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Duplicates Car Driver data",
+		"data": {}
+	},
+	"ERR_CAR_DRIVER_UPDATE_NONE": {
+		"error": true,
+		"code": "E02",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Updated Car Driver data not found",
+		"data": {}
+	},
+	"ERR_CAR_DRIVER_DELETE_NONE": {
+		"error": true,
+		"code": "E03",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Deleted Car Driver data not found",
+		"data": {}
+	},
+	"ERR_CAR_DRIVER_NOT_FOUND": {
+		"error": true,
+		"code": "E04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Car Driver data not found",
+		"data": {}
+	},
+	"CAR_DRIVER_NOT_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Car Driver deactivated successfully",
+		"data": {}
+	},
+	"CAR_DRIVER_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Car Driver activated successfully",
+		"data": {}
+	},
+
+	"TRANSACTION_INSERT_SUCCESS": {
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Transaction data added successfully",
+		"data": {}
+	},
+	"TRANSACTION_UPDATE_SUCCESS": {
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Transaction data updated successfully",
+		"data": {}
+	},
+	"TRANSACTION_DELETE_SUCCESS": {
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Transaction data deleted successfully",
+		"data": {}
+	},
+	"TRANSACTION_CANCEL_SUCCESS": {
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Transaction data successfully canceled",
+		"data": {}
+	},
+	
+	"TRANSACTION_EMAIL_SUCCESS": {
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Send receipt to email successfully",
+		"data": {}
+	},
+	"TRANSACTION_PAYMENT_SUCCESS": {
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Create payment successfully",
+		"data": {}
+	},
+
+	"ERR__TRANSACTION_DUPLICATE": {
+		"error": true,
+		"code": "E01",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Duplicates transaction data",
+		"data": {}
+	},
+	"ERR__TRANSACTION_UPDATE_NONE": {
+		"error": true,
+		"code": "E02",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Updated transaction data not found",
+		"data": {}
+	},
+	"ERR__TRANSACTION_DELETE_NONE": {
+		"error": true,
+		"code": "E03",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Deleted transaction data not found",
+		"data": {}
+	},
+	"ERR__TRANSACTION_NOT_FOUND": {
+		"error": true,
+		"code": "E04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Transaction data not found",
+		"data": {}
+	},
+	"ERR__TRANSACTION_CAR_NOT_FOUND": {
+		"error": true,
+		"code": "E04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Transaction failed - Car/Truck not found",
+		"data": {}
+	},
+	"TRANSACTION_NOT_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Transaction deactivated successfully",
+		"data": {}
+	},
+	"TRANSACTION_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Transaction activated successfully",
+		"data": {}
+	},
+	"ERR__TRANSACTION_BALANCE": {
+		"error": true,
+		"code": "E04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Balance not enough",
+		"data": {}
+	},
+	"ERR__TRANSACTION_DELETE_FAILED": {
+		"error": true,
+		"code": "E05",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Deleted transaction data failed",
+		"data": {}
+	},
+	"ERR__TRANSACTION_PAYMENT": {
+		"error": true,
+		"code": "E04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Create payment failed",
+		"data": {}
+	},
+
+	"ERR__CAR_TANK": {
+		"error": true,
+		"code": "E06",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Tank supplies not enough!",
+		"data": {}
+	},
+
+	"EB_MONEY_INSERT_SUCCESS": {
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "EB money data added successfully",
+		"data": {}
+	},
+	"EB_MONEY_UPDATE_SUCCESS": {
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "EB money data updated successfully",
+		"data": {}
+	},
+	"EB_MONEY_DELETE_SUCCESS": {
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "EB money data deleted successfully",
+		"data": {}
+	},
+	"EB_MONEY_TOPUP_SUCCESS": {
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "EB money top up successfully",
+		"data": {}
+	},
+	"ERR_EB_MONEY_DUPLICATE": {
+		"error": true,
+		"code": "E01",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Duplicates EB money data",
+		"data": {}
+	},
+	"ERR_EB_MONEY_UPDATE_NONE": {
+		"error": true,
+		"code": "E02",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Updated EB money data not found",
+		"data": {}
+	},
+	"ERR_EB_MONEY_DELETE_NONE": {
+		"error": true,
+		"code": "E03",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Deleted EB money data not found",
+		"data": {}
+	},
+	"ERR_EB_MONEY_NOT_FOUND": {
+		"error": true,
+		"code": "E04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "EB money data not found",
+		"data": {}
+	},
+	"EB_MONEY_NOT_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "EB money deactivated successfully",
+		"data": {}
+	},
+	"EB_MONEY_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "EB money activated successfully",
+		"data": {}
+	},
+	"ERR_EB_MONEY_TOPUP_FAILED": {
+		"error": true,
+		"code": "E04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "EB money top up failed",
+		"data": {}
+	},
+	"EB_MONEY_TOPUP_UPDATE_SUCCESS": {
+		"error": false,
+		"code": "E00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "EB money top up updated successfully",
+		"data": {}
+	},
+	"EB_MONEY_TOPUP_APPROVE_SUCCESS": {
+		"error": true,
+		"code": "E00",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "EB money top up verification successfully",
+		"data": {}
+	},
+	"ERR_EB_MONEY_TOPUP_APPROVE_FAILED": {
+		"error": true,
+		"code": "E04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "EB money top up verification failed",
+		"data": {}
+	},
+	
+
+	"FUEL_INSERT_SUCCESS": {
+		"error": false,
+		"code": "F00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Fuel data added successfully",
+		"data": {}
+	},
+	"FUEL_UPDATE_SUCCESS": {
+		"error": false,
+		"code": "F00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Fuel data updated successfully",
+		"data": {}
+	},
+	"FUEL_DELETE_SUCCESS": {
+		"error": false,
+		"code": "F00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Fuel data deleted successfully",
+		"data": {}
+	},
+	"ERR_FUEL_DUPLICATE": {
+		"error": true,
+		"code": "F01",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Duplicates fuel data",
+		"data": {}
+	},
+	"ERR_FUEL_UPDATE_NONE": {
+		"error": true,
+		"code": "F02",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Updated fuel data not found",
+		"data": {}
+	},
+	"ERR_FUEL_DELETE_NONE": {
+		"error": true,
+		"code": "F03",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Deleted fuel data not found",
+		"data": {}
+	},
+	"ERR_FUEL_NOT_FOUND": {
+		"error": true,
+		"code": "F04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Fuel data not found",
+		"data": {}
+	},
+	"FUEL_NOT_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "F00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Fuel deactivated successfully",
+		"data": {}
+	},
+	"FUEL_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "F00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Fuel activated successfully",
+		"data": {}
+	},
+
+
+	"CUSTOMER_CAR_INSERT_SUCCESS": {
+		"error": false,
+		"code": "G00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Customer Car data added successfully",
+		"data": {}
+	},
+	"CUSTOMER_CAR_UPDATE_SUCCESS": {
+		"error": false,
+		"code": "G00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Customer Car data updated successfully",
+		"data": {}
+	},
+	"CUSTOMER_CAR_DELETE_SUCCESS": {
+		"error": false,
+		"code": "G00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Customer Car data deleted successfully",
+		"data": {}
+	},
+	"ERR_CUSTOMER_CAR_DUPLICATE": {
+		"error": true,
+		"code": "G01",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Duplicates car data",
+		"data": {}
+	},
+	"ERR_CUSTOMER_CAR_UPDATE_NONE": {
+		"error": true,
+		"code": "G02",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Updated car data not found",
+		"data": {}
+	},
+	"ERR_CUSTOMER_CAR_DELETE_NONE": {
+		"error": true,
+		"code": "G03",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Deleted car data not found",
+		"data": {}
+	},
+	"ERR_CUSTOMER_CAR_NOT_FOUND": {
+		"error": true,
+		"code": "G04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Customer Car data not found",
+		"data": {}
+	},
+	"CUSTOMER_CAR_NOT_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "G00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Customer Car deactivated successfully",
+		"data": {}
+	},
+	"CUSTOMER_CAR_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "G00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Customer Car activated successfully",
+		"data": {}
+	},
+
+
+	"MAINTENANCE_INSERT_SUCCESS": {
+		"error": false,
+		"code": "G00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Maintenance data added successfully",
+		"data": {}
+	},
+	"MAINTENANCE_UPDATE_SUCCESS": {
+		"error": false,
+		"code": "G00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Maintenance data updated successfully",
+		"data": {}
+	},
+	"MAINTENANCE_DELETE_SUCCESS": {
+		"error": false,
+		"code": "G00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Maintenance data deleted successfully",
+		"data": {}
+	},
+	"ERR_MAINTENANCE_DUPLICATE": {
+		"error": true,
+		"code": "G01",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Duplicates car data",
+		"data": {}
+	},
+	"ERR_MAINTENANCE_UPDATE_NONE": {
+		"error": true,
+		"code": "G02",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Updated car data not found",
+		"data": {}
+	},
+	"ERR_MAINTENANCE_DELETE_NONE": {
+		"error": true,
+		"code": "G03",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Deleted car data not found",
+		"data": {}
+	},
+	"ERR_MAINTENANCE_NOT_FOUND": {
+		"error": true,
+		"code": "G04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Maintenance data not found",
+		"data": {}
+	},
+
+
+	"LOG_FILLING_INSERT_SUCCESS": {
+		"error": false,
+		"code": "H00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Log Filling data added successfully",
+		"data": {}
+	},
+	"LOG_FILLING_UPDATE_SUCCESS": {
+		"error": false,
+		"code": "H00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Log Filling data updated successfully",
+		"data": {}
+	},
+	"LOG_FILLING_DELETE_SUCCESS": {
+		"error": false,
+		"code": "H00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Log Filling data deleted successfully",
+		"data": {}
+	},
+	"ERR_LOG_FILLING_DUPLICATE": {
+		"error": true,
+		"code": "H01",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Duplicates log filling data",
+		"data": {}
+	},
+	"ERR_LOG_FILLING_UPDATE_NONE": {
+		"error": true,
+		"code": "H02",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Updated log filling data not found",
+		"data": {}
+	},
+	"ERR_LOG_FILLING_DELETE_NONE": {
+		"error": true,
+		"code": "H03",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Deleted log filling data not found",
+		"data": {}
+	},
+	"ERR_LOG_FILLING_NOT_FOUND": {
+		"error": true,
+		"code": "H04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Log Filling data not found",
+		"data": {}
+	},
+	
+
+	"CARTANK_ADD_SUCCESS": {
+		"error": false,
+		"code": "I00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Car's Tank data added successfully",
+		"data": {}
+	},"CARTANK_UPDATE_SUCCESS": {
+		"error": false,
+		"code": "I00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Car's Tank data updated successfully",
+		"data": {}
+	},"CARTANK_DELETE_SUCCESS": {
+		"error": false,
+		"code": "I00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Car's Tank data deleted successfully",
+		"data": {}
+	},
+	"CARTANK_ADD_FAILED": {
+		"error": true,
+		"code": "I01",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Car's Tank data not added",
+		"data": {}
+	},
+	"CARTANK_UPDATE_NONE": {
+		"error": true,
+		"code": "I02",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Car's Tank not found",
+		"data": {}
+	},
+	"CARTANK_DELETE_NONE": {
+		"error": true,
+		"code": "I02",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Car's Tank not found",
+		"data": {}
+	},
+	
+	"SECTOR_INSERT_SUCCESS": {
+		"error": false,
+		"code": "J00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Sector data added successfully",
+		"data": {}
+	},
+	"SECTOR_UPDATE_SUCCESS": {
+		"error": false,
+		"code": "J00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Sector data updated successfully",
+		"data": {}
+	},
+	"SECTOR_WRITE_SUCCESS": {
+		"error": false,
+		"code": "J00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Geojson data created successfully",
+		"data": {}
+	},
+	"SECTOR_DELETE_SUCCESS": {
+		"error": false,
+		"code": "J00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Sector data deleted successfully",
+		"data": {}
+	},
+	"ERR_SECTOR_DUPLICATE": {
+		"error": true,
+		"code": "J01",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Duplicates sector data",
+		"data": {}
+	},
+	"ERR_SECTOR_UPDATE_NONE": {
+		"error": true,
+		"code": "J02",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Updated sector data not found",
+		"data": {}
+	},
+	"ERR_SECTOR_DELETE_NONE": {
+		"error": true,
+		"code": "J03",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Deleted sector data not found",
+		"data": {}
+	},
+	"ERR_SECTOR_NOT_FOUND": {
+		"error": true,
+		"code": "J04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Sector data not found",
+		"data": {}
+	},
+
+	"CAR_OPERATION_INSERT_SUCCESS": {
+		"error": false,
+		"code": "K00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Car operation data added successfully",
+		"data": {}
+	},
+	"CAR_OPERATION_UPDATE_SUCCESS": {
+		"error": false,
+		"code": "K00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Car operation data updated successfully",
+		"data": {}
+	},
+	"CAR_OPERATION_DELETE_SUCCESS": {
+		"error": false,
+		"code": "K00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Car operation data deleted successfully",
+		"data": {}
+	},
+	"ERR_CAR_OPERATION_DUPLICATE": {
+		"error": true,
+		"code": "K01",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Duplicates Car operation data",
+		"data": {}
+	},
+	"ERR_CAR_OPERATION_UPDATE_NONE": {
+		"error": true,
+		"code": "K02",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Updated Car operation data not found",
+		"data": {}
+	},
+	"ERR_CAR_OPERATION_DELETE_NONE": {
+		"error": true,
+		"code": "K03",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Deleted Car operation data not found",
+		"data": {}
+	},
+	"ERR_CAR_OPERATION_NOT_FOUND": {
+		"error": true,
+		"code": "K04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Car operation data not found",
+		"data": {}
+	},
+
+	"METABASELINK_INSERT_SUCCESS": {
+		"error": false,
+		"code": "L00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Metabase Link data added successfully",
+		"data": {}
+	},
+	"METABASELINK_UPDATE_SUCCESS": {
+		"error": false,
+		"code": "L00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Metabase Link data updated successfully",
+		"data": {}
+	},
+	"METABASELINK_DELETE_SUCCESS": {
+		"error": false,
+		"code": "L00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Metabase Link data deleted successfully",
+		"data": {}
+	},
+	"ERR_METABASELINK_DUPLICATE": {
+		"error": true,
+		"code": "L01",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Duplicates Metabase Link data",
+		"data": {}
+	},
+	"ERR_METABASELINK_UPDATE_NONE": {
+		"error": true,
+		"code": "L02",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Updated Metabase Link data not found",
+		"data": {}
+	},
+	"ERR_METABASELINK_DELETE_NONE": {
+		"error": true,
+		"code": "L03",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Deleted Metabase Link data not found",
+		"data": {}
+	},
+	"ERR_METABASELINK_NOT_FOUND": {
+		"error": true,
+		"code": "L04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Metabase Link data not found",
+		"data": {}
+	},
+	"METABASELINK_NOT_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "L00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Metabase Link deactivated successfully",
+		"data": {}
+	},
+	"METABASELINK_ACTIVE_SUCCESS":{
+		"error": false,
+		"code": "L00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Metabase Link activated successfully",
+		"data": {}
+	},
+
+	"CARGO_INSPECTION_INSERT_SUCCESS": {
+		"error": false,
+		"code": "M00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Cargo inspection data added successfully",
+		"data": {}
+	},
+	"CARGO_INSPECTION_UPDATE_SUCCESS": {
+		"error": false,
+		"code": "M00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Cargo inspection data updated successfully",
+		"data": {}
+	},
+	"CARGO_INSPECTION_DELETE_SUCCESS": {
+		"error": false,
+		"code": "M00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Cargo inspection data deleted successfully",
+		"data": {}
+	},
+	"ERR_CARGO_INSPECTION_DUPLICATE": {
+		"error": true,
+		"code": "M01",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Duplicates Cargo inspection data",
+		"data": {}
+	},
+	"ERR_CARGO_INSPECTION_UPDATE_NONE": {
+		"error": true,
+		"code": "M02",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Updated Cargo inspection data not found",
+		"data": {}
+	},
+	"ERR_CARGO_INSPECTION_DELETE_NONE": {
+		"error": true,
+		"code": "M03",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Deleted Cargo inspection data not found",
+		"data": {}
+	},
+	"ERR_CARGO_INSPECTION_NOT_FOUND": {
+		"error": true,
+		"code": "M04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Cargo inspection data not found",
+		"data": {}
+	},
+
+	"RATE_INSERT_SUCCESS": {
+		"error": false,
+		"code": "N00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Rate data added successfully",
+		"data": {}
+	},
+	"RATE_UPDATE_SUCCESS": {
+		"error": false,
+		"code": "N00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Rate data updated successfully",
+		"data": {}
+	},
+	"RATE_DELETE_SUCCESS": {
+		"error": false,
+		"code": "N00",
+		"status": 200,
+		"from": "",
+		"info": {},
+		"message": "Rate data deleted successfully",
+		"data": {}
+	},
+	"ERR_RATE_DUPLICATE": {
+		"error": true,
+		"code": "N01",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Duplicates rate data",
+		"data": {}
+	},
+	"ERR_RATE_UPDATE_NONE": {
+		"error": true,
+		"code": "N02",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Updated rate data not found",
+		"data": {}
+	},
+	"ERR_RATE_DELETE_NONE": {
+		"error": true,
+		"code": "N03",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Deleted rate data not found",
+		"data": {}
+	},
+	"ERR_RATE_NOT_FOUND": {
+		"error": true,
+		"code": "N04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Rate data not found",
+		"data": {}
+	},
+	"ERR_RATE_TRANSACTION_NOT_FOUND": {
+		"error": true,
+		"code": "N04",
+		"status": 200,"status-old": 400,
+		"from": "",
+		"info": {},
+		"message": "Transaction data not found",
+		"data": {}
+	}
+	
+}
