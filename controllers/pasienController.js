@@ -44,7 +44,6 @@ exports.find = function (APP, req, callback) {
 	if (req.body.kota) query.where.kota = req.body.kota;
 	if (req.body.no_telp) query.where.no_telp = req.body.no_telp;
 	if (req.body.pekerjaan) query.where.pekerjaan = req.body.pekerjaan;
-
 	query.logging = customLogger;
 	APP.models.mysql.rs.pasien.findAll(query).then((rows) => {
 		log.sql(queryStr,req.user);
@@ -55,7 +54,7 @@ exports.find = function (APP, req, callback) {
 				dataCount: rows.length
 			}
 		});
-	}).catch((err) => {		
+	}).catch((err) => {	
 		return callback({
 			code: 'ERR_DATABASE',
 			info: err,
@@ -100,8 +99,7 @@ exports.insert = function (APP, req, callback) {
 
 	var query = {}
 	query.logging = customLogger;
-	
-	APP.models.mysql.rs.pasien.build(params).save(query).then(result => {		
+	APP.models.mysql.rs.pasien.build(params).save(query).then(result => {	
 		log.sql(queryStr,req.user);
 		return callback(null, {
 			code: 'PASIEN_INSERT_SUCCESS',
@@ -219,6 +217,7 @@ exports.delete = function (APP, req, callback) {
 
 exports.last_number = function (APP, req, callback) {
 	module.exports.find(APP, {
+		user:req.user,
 		body:{
 			order_by:['id_pasien','DESC']
 		}  

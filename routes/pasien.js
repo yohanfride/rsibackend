@@ -224,7 +224,7 @@ router.post('/insert', (req, res, next) => {
 			callback(null, true);
 		},	
 		function checkingKTP(index,callback) {
-			pasienController.find(req.APP, {body:{ktp:req.body.ktp}}, (err, result) => {
+			pasienController.find(req.APP, {user:req.user,body:{ktp:req.body.ktp}}, (err, result) => {
 				if (err) return callback(err);
 				if (result.code == 'FOUND') return callback({
 					code: 'ERR_PASIEN_DUPLICATE',
@@ -238,7 +238,7 @@ router.post('/insert', (req, res, next) => {
 		},
 		function checkingNoRekamMedik(index,callback) {
 			if(req.body.no_rekam_medik){
-				pasienController.find(req.APP, {body:{no_rekam_medik:req.body.no_rekam_medik}}, (err, result) => {
+				pasienController.find(req.APP, {user:req.user,body:{no_rekam_medik:req.body.no_rekam_medik}}, (err, result) => {
 					if (err) return callback(err);
 					if (result.code == 'FOUND') return callback({
 						code: 'ERR_PASIEN_DUPLICATE',
@@ -251,7 +251,7 @@ router.post('/insert', (req, res, next) => {
 				});
 			} else {
 				var code = prefix_rekam + moment().format('YYYYMM');
-				pasienController.last_number(req.APP, { body:{ code:code } }, (err, result) => {
+				pasienController.last_number(req.APP, { user:req.user,body:{ code:code } }, (err, result) => {
 					if (err) return callback(err);
 					req.body.no_rekam_medik = result.code;
 					callback(null, true);

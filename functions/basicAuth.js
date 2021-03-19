@@ -16,7 +16,6 @@ function basicAuth(req, res, next){
     const credentials = Buffer.from(base64Credentials, 'base64').toString('ascii');
     const [username, password] = credentials.split(':'); 
     usersController.login(req.APP, {body:{ username:username,password:password }}, (err, result) => {
-        console.log(err);
         if (err){
             return res.status(401).json({ message: 'Invalid Authentication Credentials' });
         }

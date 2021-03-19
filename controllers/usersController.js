@@ -238,7 +238,6 @@ exports.login = function (APP, req, callback) {
 	module.exports.find(APP, {
 		body:req.body  
 	}, (err, result) => {
-		console.log(err);
 		if (err) return callback({
 				code: 'ERR_LOGIN',
 				data: req.body
@@ -248,7 +247,6 @@ exports.login = function (APP, req, callback) {
 				data: req.body
 			});					
 		var password_dec = encryption.extract(result.data[0].dataValues.password)[0];
-		console.log(password_dec+':'+req.body.password);						
 		if ( !(password_dec == req.body.password) ){
 			callback({
 				code: 'ERR_LOGIN_WRONG',

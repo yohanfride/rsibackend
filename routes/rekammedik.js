@@ -161,7 +161,7 @@ router.post('/insert', (req, res, next) => {
 			callback(null, true);
 		},	
 		function checkingUsername(index,callback) {
-			dokterController.find(req.APP, {body:{id_dokter:req.body.id_dokter}}, (err, result) => {
+			dokterController.find(req.APP, {user:req.user,body:{id_dokter:req.body.id_dokter}}, (err, result) => {
 				if (err) return callback(err);
 				if (result.code != 'FOUND') return callback({
 					code: 'ERR_REKAM_MEDIK_PARAMS_NOT_VALID',
@@ -174,7 +174,7 @@ router.post('/insert', (req, res, next) => {
 			});
 		},	
 		function checkingUsername(index,callback) {
-			pasienController.find(req.APP, {body:{no_rekam_medik:req.body.no_rekam_medik}}, (err, result) => {
+			pasienController.find(req.APP, {user:req.user,body:{no_rekam_medik:req.body.no_rekam_medik}}, (err, result) => {
 				if (err) return callback(err);
 				if (result.code != 'FOUND') return callback({
 					code: 'ERR_REKAM_MEDIK_PARAMS_NOT_VALID',
