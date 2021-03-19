@@ -66,12 +66,12 @@ allHost.forEach(function(value){
 		//,timezone:"Asia/Jakarta"
 	};
 	sequelize[allDb[i]] = new Sequelize(allName[i], allUser[i], allPass[i], options);  	
-	// sequelize[allDb[i]].authenticate().then(function(err) {
- //    	console.log('Connection has been established successfully.');
- //  	})
- //  	.catch(function (err) {
- //    	console.log('Unable to connect to the database:', err);
- //  	});
+	sequelize[allDb[i]].authenticate().then(function(err) {
+    	console.log('Connection has been established successfully.');
+  	})
+  	.catch(function (err) {
+    	console.log('Unable to connect to the database:', err);
+  	});
 	i++;
 });
 
