@@ -21,8 +21,7 @@ function customLogger( queryString, queryObject ){
 
 exports.find = function (APP, req, callback) {
 	var query = {}
-	query.logging = customLogger;
-	
+
 	query.where = {};
 	if(req.body.take)
 		query.limit = parseInt(req.body.take);
@@ -62,7 +61,6 @@ exports.find = function (APP, req, callback) {
 
 
 	APP.models.mysql.rs.users.findAll(query).then((rows) => {
-		log.sql(queryStr,req.user);
 		return callback(null, {
 			code: (rows && (rows.length > 0)) ? 'FOUND' : 'NOT_FOUND',
 			data: rows,
@@ -70,7 +68,7 @@ exports.find = function (APP, req, callback) {
 				dataCount: rows.length
 			}
 		});
-	}).catch((err) => {		
+	}).catch((err) => {	
 		return callback({
 			code: 'ERR_DATABASE',
 			info: err,
@@ -238,6 +236,7 @@ exports.login = function (APP, req, callback) {
 	module.exports.find(APP, {
 		body:req.body  
 	}, (err, result) => {
+		console.log(err);
 		if (err) return callback({
 				code: 'ERR_LOGIN',
 				data: req.body

@@ -21,7 +21,6 @@ function customLogger( queryString, queryObject ){
 
 exports.find = function (APP, req, callback) {
 	var query = {}
-	query.logging = customLogger;
 
 	query.where = {};
 	if(req.body.take)
@@ -47,7 +46,6 @@ exports.find = function (APP, req, callback) {
 	if (req.body.pekerjaan) query.where.pekerjaan = req.body.pekerjaan;
 
 	APP.models.mysql.rs.pasien.findAll(query).then((rows) => {
-		log.sql(queryStr,req.user);
 		return callback(null, {
 			code: (rows && (rows.length > 0)) ? 'FOUND' : 'NOT_FOUND',
 			data: rows,
