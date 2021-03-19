@@ -156,9 +156,9 @@ exports.blockchain = function (url, params,callback) {
 		.send(params)
 		.end(function (response) {			
 			if (response.error) {
-		  		callback(response);
+		  		callback(response.error,response.body);
 		  	} else {
-		  		callback(null,response);
+		  		callback(null,response.body);
 		  	}
 		});
 };

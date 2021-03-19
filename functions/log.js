@@ -29,9 +29,9 @@ exports.insert = function (APP, req, callback) {
 };
 
 exports.sql = function ( queryStr, users ) {
-	if(queryObject.type != 'SELECT'){
-		queryString = queryStr.queryString;
-		queryObject = queryStr.queryObject;
+	queryString = queryStr.queryString;
+	queryObject = queryStr.queryObject;
+	// if(queryObject.type != 'SELECT'){
 		if(queryObject.type != 'SELECT' && queryObject.type != 'DELETE'){
 			queryString = queryString.replace('Executing (default): ', '');  
 		    for(var i=0; i<queryObject.bind.length; i++){
@@ -52,13 +52,15 @@ exports.sql = function ( queryStr, users ) {
 			admin: users.name
 		};
 		var url = process.env.BLOKCHAIN_URL;
+		console.log(url);
 		request.blockchain(url,send,function(err,result){
 			if(err){
 				console.log("Error");
 				console.log(err);
+				console.log(result);
 			} else {
 				console.log(result);
 			}
 		});	
-	}
+	// }
 };

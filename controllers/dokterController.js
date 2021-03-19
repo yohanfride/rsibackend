@@ -33,7 +33,10 @@ exports.find = function (APP, req, callback) {
 	if (req.body.alamat) query.where.alamat = req.body.alamat;
 	if (req.body.no_telp) query.where.no_telp = req.body.no_telp;
 	if (req.body.spesialis) query.where.spesialis = req.body.spesialis;
+
+	query.logging = customLogger;
 	APP.models.mysql.rs.dokter.findAll(query).then((rows) => {
+		log.sql(queryStr,req.user);
 		return callback(null, {
 			code: (rows && (rows.length > 0)) ? 'FOUND' : 'NOT_FOUND',
 			data: rows,
