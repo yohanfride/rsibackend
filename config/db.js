@@ -38,6 +38,8 @@ const operatorsAliases = {
 var sequelize = [];
 var i=0;
 allHost.forEach(function(value){
+	if(value == '')
+		continue;
 	var options = (process.env.NODE_ENV === 'production') ? {
 		host: value,
 		port: allPort[i],
@@ -66,6 +68,7 @@ allHost.forEach(function(value){
 		//,timezone:"Asia/Jakarta"
 	};
 	sequelize[allDb[i]] = new Sequelize(allName[i], allUser[i], allPass[i], options);  	
+	console.log(allName[i]+" - "+allUser[i]+" - "+ allPass[i]);
 	sequelize[allDb[i]].authenticate().then(function(err) {
     	console.log('Connection has been established successfully.');
   	})
