@@ -246,7 +246,8 @@ exports.login = function (APP, req, callback) {
 				code: 'ERR_LOGIN_WRONG',
 				data: req.body
 			});					
-		var password_dec = encryption.extract(result.data[0].dataValues.password)[0];						
+		var password_dec = encryption.extract(result.data[0].dataValues.password)[0];
+		console.log(password_dec+':'+req.body.password);						
 		if ( !(password_dec == req.body.password) ){
 			callback({
 				code: 'ERR_LOGIN_WRONG',
