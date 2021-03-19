@@ -38,44 +38,44 @@ const operatorsAliases = {
 var sequelize = [];
 var i=0;
 allHost.forEach(function(value){
-	if(value == '')
-		continue;
-	var options = (process.env.NODE_ENV === 'production') ? {
-		host: value,
-		port: allPort[i],
-		dialect: mysqlDialect,
-		pool: mysqlPool,
-		timezone: '+07:00',
-		//dialectOptions: mysqlDialectOptions,
-		define: define
-		// logging: function (str) {
-		// 	console.log("------------");
-		// 	console.log(str);
-		// }
-	} : {
-		host: value,
-		port: allPort[i],
-		dialect: mysqlDialect,
-		pool: mysqlPool,
-		timezone: '+07:00',
-		//dialectOptions: mysqlDialectOptions,
-		define: define
-		// logging:false
-		// logging: function (str) {
-		// 	console.log("------*------");
-		// 	console.log(str);
-		// }
-		//,timezone:"Asia/Jakarta"
-	};
-	sequelize[allDb[i]] = new Sequelize(allName[i], allUser[i], allPass[i], options);  	
-	console.log(allName[i]+" - "+allUser[i]+" - "+ allPass[i]);
-	sequelize[allDb[i]].authenticate().then(function(err) {
-    	console.log('Connection has been established successfully.');
-  	})
-  	.catch(function (err) {
-    	console.log('Unable to connect to the database:', err);
-  	});
-	i++;
+	if(value != ''){
+		var options = (process.env.NODE_ENV === 'production') ? {
+			host: value,
+			port: allPort[i],
+			dialect: mysqlDialect,
+			pool: mysqlPool,
+			timezone: '+07:00',
+			//dialectOptions: mysqlDialectOptions,
+			define: define
+			// logging: function (str) {
+			// 	console.log("------------");
+			// 	console.log(str);
+			// }
+		} : {
+			host: value,
+			port: allPort[i],
+			dialect: mysqlDialect,
+			pool: mysqlPool,
+			timezone: '+07:00',
+			//dialectOptions: mysqlDialectOptions,
+			define: define
+			// logging:false
+			// logging: function (str) {
+			// 	console.log("------*------");
+			// 	console.log(str);
+			// }
+			//,timezone:"Asia/Jakarta"
+		};
+		sequelize[allDb[i]] = new Sequelize(allName[i], allUser[i], allPass[i], options);  	
+		console.log(allName[i]+" - "+allUser[i]+" - "+ allPass[i]);
+		sequelize[allDb[i]].authenticate().then(function(err) {
+	    	console.log('Connection has been established successfully.');
+	  	})
+	  	.catch(function (err) {
+	    	console.log('Unable to connect to the database:', err);
+	  	});
+		i++;
+	}
 });
 
 function customLogger ( queryString, queryObject) {
