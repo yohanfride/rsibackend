@@ -4,7 +4,7 @@ const usersController = require('../controllers/usersController.js');
 module.exports = basicAuth;
 
 function basicAuth(req, res, next){
-    if (req.path === '/auth/login') {
+    if (req.path === '/auth/login/') {
         return next();
     }
     // check for basic auth header

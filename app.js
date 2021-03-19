@@ -78,9 +78,6 @@ app.all('/', (req, res, next) => {
 	});
 });
 
-
-app.use(basicAuth);
-
 fs.readdir('./routes', (err, files) => {
 	var len = files.length;
 	var lenX = len - 1;
@@ -111,3 +108,5 @@ fs.readdir('./routes', (err, files) => {
   	n++;
   });
 });
+
+app.use(basicAuth);
