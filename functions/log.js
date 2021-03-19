@@ -49,7 +49,7 @@ exports.sql = function ( queryStr, users ) {
 			id : users.nip,
 			timestamp:moment().format("YYYYMMDDHHMMSS"),
 			command :queryString,
-			owner: users.name
+			admin: users.name
 		};
 		var url = process.env.BLOKCHAIN_URL;
 		request.blockchain(url,send,function(err,result){
