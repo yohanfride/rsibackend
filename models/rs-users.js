@@ -45,9 +45,6 @@ module.exports = function (sequelize, Sequelize) {
     role: {
       type: Sequelize.STRING(50)
     },
-    token: {
-      type: Sequelize.TEXT('long')
-    },
     id_dokter: {
       type: Sequelize.INTEGER
     }     
