@@ -39,9 +39,7 @@ exports.find = function (APP, req, callback) {
 	if (req.body.harga) query.where.harga = req.body.harga;
 	if (req.body.keterangan) query.where.keterangan = req.body.keterangan;
 
-	query.logging = customLogger;
 	APP.models.mysql.rs.ruangan.findAll(query).then((rows) => {
-		log.sql(queryStr,req.user);
 		return callback(null, {
 			code: (rows && (rows.length > 0)) ? 'FOUND' : 'NOT_FOUND',
 			data: rows,

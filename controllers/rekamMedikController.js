@@ -52,9 +52,7 @@ exports.find = function (APP, req, callback) {
 	    }
 	}
 
-	query.logging = customLogger;
 	APP.models.mysql.rs.rekammedik.findAll(query).then((rows) => {
-		log.sql(queryStr,req.user);
 		return callback(null, {
 			code: (rows && (rows.length > 0)) ? 'FOUND' : 'NOT_FOUND',
 			data: rows,

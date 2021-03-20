@@ -1,4 +1,5 @@
 "use strict";
+const moment = require('moment');
 
 module.exports = function (sequelize, Sequelize) {
   var Users = sequelize.define('users', {
@@ -22,12 +23,18 @@ module.exports = function (sequelize, Sequelize) {
     last_login: {
       type: Sequelize.DATE,
       allowNull: false,
-      defaultValue: Sequelize.NOW
+      defaultValue: Sequelize.NOW,
+      get: function() {
+        return moment.utc(this.getDataValue('last_login')).add(7, 'hours').format('YYYY-MM-DD HH:mm:ss');
+      }
     },
     date_add: {
       type: Sequelize.DATE,
       allowNull: false,
-      defaultValue: Sequelize.NOW
+      defaultValue: Sequelize.NOW,
+      get: function() {
+        return moment.utc(this.getDataValue('date_add')).add(7, 'hours').format('YYYY-MM-DD HH:mm:ss');
+      }
     },
     add_by: {
       type: Sequelize.STRING(45)
@@ -40,6 +47,9 @@ module.exports = function (sequelize, Sequelize) {
     },
     token: {
       type: Sequelize.TEXT('long')
+    },
+    id_dokter: {
+      type: Sequelize.INTEGER
     }     
   }, {});
 

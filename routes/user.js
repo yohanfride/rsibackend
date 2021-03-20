@@ -182,6 +182,11 @@ router.post('/insert', (req, res, next) => {
 			if(!req.body.password){
 				req.body.password = Math.random().toString(36).substring(2, 10);	
 			}
+			if(!req.body.add_by){
+				if(req.user){
+					req.body.add_by = req.user.id
+				}
+			}
 			req.body.passwordNoEncpty = req.body.password;
 			callback(null, true);
 		},		

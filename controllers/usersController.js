@@ -39,6 +39,7 @@ exports.find = function (APP, req, callback) {
 	if (req.body.status == 0) query.where.status = req.body.status;
 	if (req.body.token) query.where.token = req.body.token;
 	if (req.body.role) query.where.role = req.body.role;
+	if (req.body.id_dokter) query.where.id_dokter = req.body.id_dokter;
 	
 	if (req.body.last_login) query.where.last_login = {
       	[Op.gte]: req.body.last_login
@@ -59,10 +60,7 @@ exports.find = function (APP, req, callback) {
 	    }
 	}
 
-	query.logging = customLogger;
 	APP.models.mysql.rs.users.findAll(query).then((rows) => {
-		if(req.user)
-			log.sql(queryStr,req.user);
 		return callback(null, {
 			code: (rows && (rows.length > 0)) ? 'FOUND' : 'NOT_FOUND',
 			data: rows,
@@ -165,7 +163,8 @@ exports.update = function (APP, req, callback) {
 	if (req.body.dataUpdate.status == 0) params.dataUpdate.status = req.body.dataUpdate.status;
 	if (req.body.dataUpdate.role) params.dataUpdate.role = req.body.dataUpdate.role;
 	if (req.body.dataUpdate.token) params.dataUpdate.token = req.body.dataUpdate.token;
-	if (req.body.dataUpdate.last_login) params.dataUpdate.expired_otp = req.body.dataUpdate.expired_otp;
+	if (req.body.dataUpdate.last_login) params.dataUpdate.last_login = req.body.dataUpdate.last_login;
+	if (req.body.dataUpdate.id_dokter) params.dataUpdate.id_dokter = req.body.dataUpdate.id_dokter;
 	
 	delete req.body.dataQuery;
 	delete req.body.dataUpdate;
