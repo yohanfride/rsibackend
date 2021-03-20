@@ -224,6 +224,8 @@ exports.delete = function (APP, req, callback) {
 			data: params.where
 		});
 	}).catch(err => {
+		console.log("---------------sasasasa---------------");
+		console.log(err);
 		return callback({
 			code: 'ERR_DATABASE',
 			info: err,

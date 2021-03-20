@@ -76,8 +76,9 @@ router.post('/delete', (req, res, next) => {
 		},
 		function gettingData (index, callback) {
 			usersController.delete(req.APP, req, (err, result) => {
+				console.log("--------ERRE-----------");
+				console.log(err);
 				if (err) return callback(err);
-
 				callback(null, result);
 			});
 		}

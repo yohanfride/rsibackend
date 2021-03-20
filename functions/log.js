@@ -32,7 +32,7 @@ exports.sql = function ( queryStr, users ) {
 	queryString = queryStr.queryString;
 	queryObject = queryStr.queryObject;
 	if(queryObject.type != 'SELECT'){
-		if(queryObject.type != 'SELECT' && queryObject.type != 'DELETE'){
+		if(queryObject.type == 'INSERT' || queryObject.type == 'UPDATE'){
 			queryString = queryString.replace('Executing (default): ', '');  
 		    for(var i=0; i<queryObject.bind.length; i++){
 		    	if(Number.isInteger(queryObject.bind[i])){
