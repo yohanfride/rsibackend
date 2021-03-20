@@ -26,7 +26,7 @@ exports.find = function (APP, req, callback) {
 	if(req.body.take)
 		query.limit = parseInt(req.body.take);
 	query.offset = parseInt(req.body.skip ? req.body.skip : 0);
-	query.order = [];
+	query.order = [['tanggal_pemeriksaan', 'DESC']];
 	if (req.body.id) query.where.id_rekam_medik = req.body.id;
 	if (req.body.id_rekam_medik) query.where.id_rekam_medik = req.body.id_rekam_medik;
 
