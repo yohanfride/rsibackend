@@ -85,7 +85,7 @@ router.post('/login', (req, res, next) => {
 					id:results.data.dataValues.id
 				},
 				dataUpdate : {
-					last_login: moment.utc(moment()).format('YYYY-MM-DD HH:mm:ss')
+					last_login: moment.utc(moment()).add(7, 'hours').format('YYYY-MM-DD HH:mm:ss')
 				}
 			}
 			usersController.update(req.APP, {body,user:results.data.dataValues}, (err, result) => {

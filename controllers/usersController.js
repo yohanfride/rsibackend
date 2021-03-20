@@ -109,17 +109,16 @@ exports.insert = function (APP, req, callback) {
 		add_by:req.body.add_by,
 		date_add:req.body.date_add,
 		status:req.body.status,
-		role:req.body.role
+		role:req.body.role,
+		id_dokter:req.body.id_dokter
 	};			
 
 	var query = {}
 	query.logging = customLogger;
 	
-
 	APP.models.mysql.rs.users.build(params).save(query).then(result => {		
 		if(result.dataValues) result.dataValues.password = pass;
 		else params.password = pass;
-
 		log.sql(queryStr,req.user);
 		return callback(null, {
 			code: 'USERS_INSERT_SUCCESS',
@@ -154,7 +153,10 @@ exports.update = function (APP, req, callback) {
 	params.dataUpdate = {};
 	params.dataQuery = {};	
 	params.dataQuery.where = {};							
-	if (req.body.dataQuery.id) params.dataQuery.where.id = req.body.dataQuery.id;
+	if (req.body.dataQuery.id_dokter){
+		params.dataQuery.where.id_dokter = req.body.dataQuery.id_dokter;
+	} else if (req.body.dataQuery.id) params.dataQuery.where.id = req.body.dataQuery.id;
+
 	if (req.body.dataUpdate.username) params.dataUpdate.username = req.body.dataUpdate.username;
 	if (req.body.dataUpdate.password) params.dataUpdate.password = req.body.dataUpdate.password;
 	if (req.body.dataUpdate.name) params.dataUpdate.name = req.body.dataUpdate.name;
@@ -164,7 +166,6 @@ exports.update = function (APP, req, callback) {
 	if (req.body.dataUpdate.role) params.dataUpdate.role = req.body.dataUpdate.role;
 	if (req.body.dataUpdate.token) params.dataUpdate.token = req.body.dataUpdate.token;
 	if (req.body.dataUpdate.last_login) params.dataUpdate.last_login = req.body.dataUpdate.last_login;
-	if (req.body.dataUpdate.id_dokter) params.dataUpdate.id_dokter = req.body.dataUpdate.id_dokter;
 	
 	delete req.body.dataQuery;
 	delete req.body.dataUpdate;
@@ -172,10 +173,9 @@ exports.update = function (APP, req, callback) {
 			code: 'ERR_USERS_UPDATE_NONE',
 			data: req.body
 		});
-
 	params.dataQuery.logging = customLogger;
 	APP.models.mysql.rs.users.update(params.dataUpdate, params.dataQuery).then(result => {							
-		if (!result || (result && !result[0])) return callback(null, {
+		if (!result || (result && !result[0])) return callback({
 				code: 'ERR_USERS_UPDATE_NONE',
 				data: req.body
 			});

@@ -130,7 +130,7 @@ exports.update = function (APP, req, callback) {
 
 	params.dataQuery.logging = customLogger;
 	APP.models.mysql.rs.dokter.update(params.dataUpdate, params.dataQuery).then(result => {							
-		if (!result || (result && !result[0])) return callback(null, {
+		if (!result || (result && !result[0])) return callback({
 				code: 'ERR_DOKTER_UPDATE_NONE',
 				data: req.body
 			});
