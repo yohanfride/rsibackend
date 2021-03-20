@@ -52,6 +52,17 @@ exports.find = function (APP, req, callback) {
 	    }
 	}
 
+	APP.models.mysql.rs.rekammedik.belongsTo(APP.models.mysql.rs.dokter, {foreignKey : 'id_dokter',targetKey: 'id_dokter'});	
+    APP.models.mysql.rs.rekammedik.belongsTo(APP.models.mysql.rs.pasien, {foreignKey : 'no_rekam_medik',targetKey: 'no_rekam_medik'});	
+		query.include = [
+	        { 	model:APP.models.mysql.rs.dokter,
+	           	where:{},         
+	           	required:true},
+           	{ 	model:APP.models.mysql.rs.pasien,
+	           	where:{},         
+	           	required:true},   	
+       	];
+
 	APP.models.mysql.rs.rekammedik.findAll(query).then((rows) => {
 		return callback(null, {
 			code: (rows && (rows.length > 0)) ? 'FOUND' : 'NOT_FOUND',

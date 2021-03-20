@@ -34,6 +34,12 @@ exports.find = function (APP, req, callback) {
 	if (req.body.no_telp) query.where.no_telp = req.body.no_telp;
 	if (req.body.spesialis) query.where.spesialis = req.body.spesialis;
 
+	APP.models.mysql.rs.dokter.belongsTo(APP.models.mysql.rs.users, {foreignKey : 'id_dokter',targetKey: 'id_dokter'});	
+		query.include = [
+           	{ 	model:APP.models.mysql.rs.users,
+	           	where:{},         
+	           	required:true}   	
+       	];
 	APP.models.mysql.rs.dokter.findAll(query).then((rows) => {
 		return callback(null, {
 			code: (rows && (rows.length > 0)) ? 'FOUND' : 'NOT_FOUND',
