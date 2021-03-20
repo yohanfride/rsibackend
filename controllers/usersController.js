@@ -223,9 +223,7 @@ exports.delete = function (APP, req, callback) {
 			code: 'USERS_DELETE_SUCCESS',
 			data: params.where
 		});
-	}).catch(err => {
-		console.log("---------------sasasasa---------------");
-		console.log(err);
+	}).catch(err => {		
 		return callback({
 			code: 'ERR_DATABASE',
 			info: err,

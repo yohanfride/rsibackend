@@ -192,6 +192,7 @@ router.post('/insert', (req, res, next) => {
 					req.body.add_by = req.user.id
 				}
 			}
+			callback(null, true);
 		},
 		function insertData (index, callback) {
 			rekamMedikController.insert(req.APP, req, (err, result) => {				
