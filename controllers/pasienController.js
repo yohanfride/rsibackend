@@ -44,6 +44,7 @@ exports.find = function (APP, req, callback) {
 	if (req.body.kota) query.where.kota = req.body.kota;
 	if (req.body.no_telp) query.where.no_telp = req.body.no_telp;
 	if (req.body.pekerjaan) query.where.pekerjaan = req.body.pekerjaan;
+	if (req.body.idhash) query.where.idhash = req.body.idhash;
 	APP.models.mysql.rs.pasien.findAll(query).then((rows) => {
 		return callback(null, {
 			code: (rows && (rows.length > 0)) ? 'FOUND' : 'NOT_FOUND',
@@ -143,6 +144,7 @@ exports.update = function (APP, req, callback) {
 	if (req.body.dataUpdate.kota) params.dataUpdate.kota = req.body.dataUpdate.kota;
 	if (req.body.dataUpdate.no_telp) params.dataUpdate.no_telp = req.body.dataUpdate.no_telp;
 	if (req.body.dataUpdate.pekerjaan) params.dataUpdate.pekerjaan = req.body.dataUpdate.pekerjaan;
+	if (req.body.dataUpdate.idhash) params.dataUpdate.idhash = req.body.dataUpdate.idhash;
 	
 	delete req.body.dataQuery;
 	delete req.body.dataUpdate;

@@ -10,6 +10,7 @@ const pasienController = require('../controllers/pasienController.js');
 const router = express.Router();
 const moment = require('moment');
 var email = require('../functions/email.js');
+var log = require('../functions/log.js');
 var output = {};
 const fs = require('fs')
 
@@ -76,11 +77,40 @@ router.post('/delete', (req, res, next) => {
 
 			callback(null, true);
 		},
-		function deleteData (index, callback) {
+		function gettingData (results, callback) {
+			rekamMedikController.find(req.APP, req, (err, result) => {
+				console.log(err);
+				console.log(result);
+				if (err) return callback(err);
+				var data = "";
+				if(result.code=="FOUND"){
+					var data = result.data[0].dataValues;
+				}
+				callback(null,data);
+			});
+		},
+		function deleteData (rekam, callback) {
 			rekamMedikController.delete(req.APP, req, (err, result) => {
 				if (err) return callback(err);
-				callback(null, result);
+				callback(null, result, rekam);
 			});
+		},
+		function updateBC(results, rekam,callback){
+			if(rekam){
+				rekam.dokter = rekam.dokter.dataValues;
+				rekam.pasien = rekam.pasien.dataValues;
+				rekam.status_data = "DELETE";
+				var params = {
+					id:rekam.pasien.idhash,
+					user:req.user,
+					body:rekam
+				};
+				log.update(req.APP, params, (err, result) => {	
+					console.log(err);
+					console.log(result);
+				});	
+			}
+			callback(null, results);
 		}
 	], (err, result) => {
 		if (err) return req.APP.output.print(req, res, err);
@@ -115,6 +145,31 @@ router.post('/update', (req, res, next) => {
 				if (err) return callback(err);
 				callback(null, result);
 			});
+		},
+		function gettingData (results, callback) {
+			if (req.body.id) 
+				var id = req.body.id_rekam_medik;
+			if (req.body.id_rekam_medik) 
+				var id = req.body.id_rekam_medik;
+			rekamMedikController.find(req.APP, {user:req.user,body:{id_rekam_medik:id}}, (err, result) => {
+				if (err) return callback(err);
+				callback(null,results, result.data[0].dataValues);
+			});
+		},
+		function updateBC(results,rekam,callback){
+			rekam.dokter = rekam.dokter.dataValues;
+			rekam.pasien = rekam.pasien.dataValues;
+			rekam.status_data = "UPDATE";
+			var params = {
+				id:rekam.pasien.idhash,
+				user:req.user,
+				body:rekam
+			};
+			log.update(req.APP, params, (err, result) => {	
+				console.log(err);
+				console.log(result);
+			});
+			callback(null, results);
 		}
 	], (err, result) => {
 		if (err) return req.APP.output.print(req, res, err);
@@ -195,10 +250,32 @@ router.post('/insert', (req, res, next) => {
 			callback(null, true);
 		},
 		function insertData (index, callback) {
-			rekamMedikController.insert(req.APP, req, (err, result) => {				
+			rekamMedikController.insert(req.APP, req, (err, result) => {	
 				if (err) return callback(err);
 				callback(null, result);
 			});
+		},
+		function gettingData (results, callback) {
+			var id = results.data.id_rekam_medik;
+			rekamMedikController.find(req.APP, {user:req.user,body:{id_rekam_medik:id}}, (err, result) => {
+				if (err) return callback(err);
+				callback(null,results, result.data[0].dataValues);
+			});
+		},
+		function updateBC(results,rekam,callback){
+			rekam.dokter = rekam.dokter.dataValues;
+			rekam.pasien = rekam.pasien.dataValues;
+			rekam.status_data = "INSERT";
+			var params = {
+				id:rekam.pasien.idhash,
+				user:req.user,
+				body:rekam
+			};
+			log.update(req.APP, params, (err, result) => {	
+				console.log(err);
+				console.log(result);
+			});
+			callback(null, results);
 		}		
 	], (err, result) => {
 		if (err) return req.APP.output.print(req, res, err);

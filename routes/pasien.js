@@ -8,28 +8,10 @@ const pasienController = require('../controllers/pasienController.js');
 const router = express.Router();
 const moment = require('moment');
 var email = require('../functions/email.js');
+var log = require('../functions/log.js');
 var output = {};
 const fs = require('fs')
 var prefix_rekam = "PS.";
-
-router.post('/get', (req, res, next) => {
-	async.waterfall([
-		function aliases (callback) {			
-			callback(null, true);
-		},
-		function gettingData (index, callback) {
-			pasienController.find(req.APP, req, (err, result) => {
-				if (err) return callback(err);
-
-				callback(null, result);
-			});
-		}
-	], (err, result) => {
-		if (err) return req.APP.output.print(req, res, err);
-
-		return req.APP.output.print(req, res, result);
-	});
-});
 
 router.post('/get', (req, res, next) => {
 	async.waterfall([
@@ -130,7 +112,6 @@ router.post('/update', (req, res, next) => {
 						missingParameter: 'id'
 					}
 				});
-
 			callback(null, true);
 		},
 		function aliasesParameter (index, callback) {
@@ -143,7 +124,29 @@ router.post('/update', (req, res, next) => {
 				if (err) return callback(err);
 				callback(null, result);
 			});
-		}
+		},
+		function gettingData (results, callback) {
+			if (req.body.id) 
+				var id = req.body.id;
+			if (req.body.id_pasien) 
+				var id = req.body.id_pasien;
+			pasienController.find(req.APP, {user:req.user,body:{id_pasien:id}}, (err, result) => {
+				if (err) return callback(err);
+				callback(null, results,result.data[0]);
+			});
+		},
+		function updateBC(results,pasien,callback){
+			var params = {
+				id:pasien.idhash,
+				user:req.user,
+				body:pasien.dataValues
+			};
+			log.update(req.APP, params, (err, result) => {	
+				console.log(err);
+				console.log(result);
+			});
+			callback(null, results);
+		}	
 	], (err, result) => {
 		if (err) return req.APP.output.print(req, res, err);
 
@@ -261,7 +264,29 @@ router.post('/insert', (req, res, next) => {
 		function insertData (index, callback) {
 			pasienController.insert(req.APP, req, (err, result) => {				
 				if (err) return callback(err);
+				console.log(err);
 				callback(null, result);
+			});
+		},
+		function createBC(pasien,callback){
+			var params = {
+				user:req.user,
+				body:pasien.data
+			};
+			log.create(req.APP, params, (err, result) => {	
+				console.log(err);
+				console.log(result);
+				if (err) return callback(err);
+				params.body = {
+					id:pasien.data.id_pasien,
+					idhash:result.data.id
+				}
+				params.body.dataQuery = params.body;
+				params.body.dataUpdate = params.body;
+				pasienController.update(req.APP, params, (err, result) => {
+					if (err) return callback(err);
+					callback(null, pasien);
+				});
 			});
 		}		
 	], (err, result) => {

@@ -40,6 +40,9 @@ module.exports = function (sequelize, Sequelize) {
     },
     pekerjaan: {
       type: Sequelize.STRING(50)
+    },
+    idhash: {
+      type: Sequelize.TEXT('long')
     } 
   }, {});
 
