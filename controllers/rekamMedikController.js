@@ -8,6 +8,8 @@ var email = require('../functions/email.js');
 var encryption = require('../functions/encryption.js');
 var output = {};
 const { Op } = require('sequelize');
+const Sequelize = require('sequelize');
+
 //////PENTING HAPUS FOLDER QUERY////
 
 var log = require('../functions/log.js');
@@ -256,6 +258,65 @@ exports.delete = function (APP, req, callback) {
 			data: params.where
 		});
 	}).catch(err => {
+		return callback({
+			code: 'ERR_DATABASE',
+			info: err,
+			data: req.body,
+			from: 'Rekam Medik'
+		});
+	});
+};
+
+exports.group = function (APP, req, callback) {
+	var query = {}
+
+	query.where = {};
+	if(req.body.take)
+		query.limit = parseInt(req.body.take);
+	query.offset = parseInt(req.body.skip ? req.body.skip : 0);
+	query.order = [['tanggal_pemeriksaan', 'DESC']];
+	if (req.body.id) query.where.id_rekam_medik = req.body.id;
+	if (req.body.id_rekam_medik) query.where.id_rekam_medik = req.body.id_rekam_medik;
+
+	if (req.body.no_rekam_medik) query.where.no_rekam_medik = req.body.no_rekam_medik;
+	if (req.body.id_dokter) query.where.id_dokter = req.body.id_dokter;
+	if (req.body.keluhan) query.where.keluhan = req.body.keluhan;
+	if (req.body.pemeriksaan) query.where.pemeriksaan = req.body.pemeriksaan;
+	if (req.body.diagnosis) query.where.diagnosis = req.body.diagnosis;
+	if (req.body.pengobatan) query.where.pengobatan = req.body.pengobatan;
+	if (req.body.resep_obat) query.where.resep_obat = req.body.resep_obat;
+	if (req.body.catatan) query.where.catatan = req.body.catatan;
+	if (req.body.add_by) query.where.add_by = req.body.add_by;
+
+	if ( req.body.str_date && req.body.end_date ){
+		query.where.date_add = {
+	        [Op.between]: [req.body.str_date, req.body.end_date]
+	    }
+	}
+
+	if ( req.body.str_pemeriksaan && req.body.end_pemeriksaan ){
+		query.where.tanggal_pemeriksaan = {
+	        [Op.between]: [req.body.str_pemeriksaan, req.body.end_pemeriksaan]
+	    }
+	}
+
+	if( req.body.groupby ){
+		if(req.body.groupby == 'date'){
+			query.attributes = [ [Sequelize.fn('date', Sequelize.col('tanggal_pemeriksaan')), 'date'], [Sequelize.fn('count', Sequelize.col('id_rekam_medik')), 'total_item']]; 
+			query.group = [Sequelize.fn('date', Sequelize.col('tanggal_pemeriksaan'))];
+		    query.raw = true;
+		    query.order = Sequelize.literal('date ASC');
+		}
+	}
+	APP.models.mysql.rs.rekammedik.findAll(query).then((rows) => {
+		return callback(null, {
+			code: (rows && (rows.length > 0)) ? 'FOUND' : 'NOT_FOUND',
+			data: rows,
+			info: {
+				dataCount: rows.length
+			}
+		});
+	}).catch((err) => {		
 		return callback({
 			code: 'ERR_DATABASE',
 			info: err,

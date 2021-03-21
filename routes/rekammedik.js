@@ -37,6 +37,30 @@ router.post('/get', (req, res, next) => {
 	});
 });
 
+router.post('/group', (req, res, next) => {
+	async.waterfall([
+		function aliases (callback) {	
+			if(req.body.str_date) req.body.str_date = req.body.str_date+"T00:00:00.000Z";
+			if(req.body.end_date) req.body.end_date = req.body.end_date+"T23:59:59.000Z";	
+			if(req.body.str_pemeriksaan) req.body.str_pemeriksaan = req.body.str_pemeriksaan+" 00:00:00";
+			if(req.body.end_pemeriksaan) req.body.end_pemeriksaan = req.body.end_pemeriksaan+" 23:59:59";	
+			callback(null, true);
+		},
+		function gettingData (index, callback) {
+			rekamMedikController.group(req.APP, req, (err, result) => {
+				if (err) return callback(err);
+
+				callback(null, result);
+			});
+		}
+	], (err, result) => {
+		if (err) return req.APP.output.print(req, res, err);
+
+		return req.APP.output.print(req, res, result);
+	});
+});
+
+
 
 
 router.post('/total', (req, res, next) => {
